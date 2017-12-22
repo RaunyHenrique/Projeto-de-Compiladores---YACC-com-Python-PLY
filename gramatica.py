@@ -43,52 +43,74 @@ def p_where(p):
 def p_condition(p):
     '''
     condition : ID ATRIB  ID
+              | ID ATRIB  CTE
               | ID ATRIB ASPASIMP ID ASPASIMP
               | ID MENORQ ID
+              | ID MENORQ CTE
               | ID MENORQ ASPASIMP ID ASPASIMP
               | ID MAIORQ ID
+              | ID MAIORQ CTE
               | ID MAIORQ ASPASIMP ID ASPASIMP
               | ID MENORIG ID
+              | ID MENORIG CTE
               | ID MENORIG ASPASIMP ID ASPASIMP
               | ID MAIORIG ID
+              | ID MAIORIG CTE
               | ID MAIORIG ASPASIMP ID ASPASIMP
               | ID EQ ID
+              | ID EQ CTE
               | ID EQ ASPASIMP ID ASPASIMP
               | ID NE ID
+              | ID NE CTE
               | ID NE ASPASIMP ID ASPASIMP
               | ID OR ID
               | ID OR ASPASIMP ID ASPASIMP
               | ID AND ID
               | ID AND ASPASIMP ID ASPASIMP
               | ID LIKE ID
+              | ID LIKE CTE
               | ID LIKE ASPASIMP ID ASPASIMP
               | ID ATRIB ID AND condition
+              | ID ATRIB CTE AND condition
               | ID ATRIB ASPASIMP ID ASPASIMP AND condition
               | ID ATRIB ID OR condition
+              | ID ATRIB CTE OR condition
               | ID ATRIB ASPASIMP ID ASPASIMP OR condition
               | ID EQ ID AND condition
+              | ID EQ CTE AND condition
               | ID EQ ASPASIMP ID ASPASIMP AND condition
               | ID EQ ID OR condition
+              | ID EQ CTE OR condition
               | ID EQ ASPASIMP ID ASPASIMP OR condition
               | ID NE ID AND condition
+              | ID NE CTE AND condition
               | ID NE ASPASIMP ID ASPASIMP AND condition
               | ID NE ID OR condition
+              | ID NE CTE OR condition
               | ID NE ASPASIMP ID ASPASIMP OR condition
               | ID MAIORQ ID AND condition
+              | ID MAIORQ CTE AND condition
               | ID MAIORQ ASPASIMP ID ASPASIMP AND condition
               | ID MAIORQ ID OR condition
+              | ID MAIORQ CTE OR condition
               | ID MAIORQ ASPASIMP ID ASPASIMP OR condition
               | ID MENORQ ID AND condition
+              | ID MENORQ CTE AND condition
               | ID MENORQ ASPASIMP ID ASPASIMP AND condition
               | ID MENORQ ID OR condition
+              | ID MENORQ CTE OR condition
               | ID MENORQ ASPASIMP ID ASPASIMP OR condition
               | ID MAIORIG ID AND condition
+              | ID MAIORIG CTE AND condition
               | ID MAIORIG ASPASIMP ID ASPASIMP AND condition
               | ID MAIORIG ID OR condition
+              | ID MAIORIG CTE OR condition
               | ID MAIORIG ASPASIMP ID ASPASIMP OR condition
               | ID MENORIG ID AND condition
+              | ID MENORIG CTE AND condition
               | ID MENORIG ASPASIMP ID ASPASIMP AND condition
               | ID MENORIG ID OR condition
+              | ID MENORIG CTE OR condition
               | ID MENORIG ASPASIMP ID ASPASIMP OR condition
     '''
 
