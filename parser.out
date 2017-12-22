@@ -1,0 +1,2618 @@
+Created by PLY version 3.10 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    CTE
+    OPADI
+    OPSUB
+    OPDIV
+    PVIRG
+    DPONTOS
+    APAR
+    FPAR
+    PONTO
+
+Grammar
+
+Rule 0     S' -> main
+Rule 1     main -> select items where condition
+Rule 2     select -> SELECT
+Rule 3     select -> UPDATE
+Rule 4     select -> DELETE
+Rule 5     items -> OPMULT
+Rule 6     items -> identifiers
+Rule 7     identifiers -> ID
+Rule 8     identifiers -> ID VIRG identifiers
+Rule 9     where -> FROM ID WHERE
+Rule 10    condition -> ID ATRIB ID
+Rule 11    condition -> ID ATRIB ASPASIMP ID ASPASIMP
+Rule 12    condition -> ID MENORQ ID
+Rule 13    condition -> ID MENORQ ASPASIMP ID ASPASIMP
+Rule 14    condition -> ID MAIORQ ID
+Rule 15    condition -> ID MAIORQ ASPASIMP ID ASPASIMP
+Rule 16    condition -> ID MENORIG ID
+Rule 17    condition -> ID MENORIG ASPASIMP ID ASPASIMP
+Rule 18    condition -> ID MAIORIG ID
+Rule 19    condition -> ID MAIORIG ASPASIMP ID ASPASIMP
+Rule 20    condition -> ID EQ ID
+Rule 21    condition -> ID EQ ASPASIMP ID ASPASIMP
+Rule 22    condition -> ID NE ID
+Rule 23    condition -> ID NE ASPASIMP ID ASPASIMP
+Rule 24    condition -> ID OR ID
+Rule 25    condition -> ID OR ASPASIMP ID ASPASIMP
+Rule 26    condition -> ID AND ID
+Rule 27    condition -> ID AND ASPASIMP ID ASPASIMP
+Rule 28    condition -> ID LIKE ID
+Rule 29    condition -> ID LIKE ASPASIMP ID ASPASIMP
+Rule 30    condition -> ID ATRIB ID AND condition
+Rule 31    condition -> ID ATRIB ASPASIMP ID ASPASIMP AND condition
+Rule 32    condition -> ID ATRIB ID OR condition
+Rule 33    condition -> ID ATRIB ASPASIMP ID ASPASIMP OR condition
+Rule 34    condition -> ID EQ ID AND condition
+Rule 35    condition -> ID EQ ASPASIMP ID ASPASIMP AND condition
+Rule 36    condition -> ID EQ ID OR condition
+Rule 37    condition -> ID EQ ASPASIMP ID ASPASIMP OR condition
+Rule 38    condition -> ID NE ID AND condition
+Rule 39    condition -> ID NE ASPASIMP ID ASPASIMP AND condition
+Rule 40    condition -> ID NE ID OR condition
+Rule 41    condition -> ID NE ASPASIMP ID ASPASIMP OR condition
+Rule 42    condition -> ID MAIORQ ID AND condition
+Rule 43    condition -> ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+Rule 44    condition -> ID MAIORQ ID OR condition
+Rule 45    condition -> ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+Rule 46    condition -> ID MENORQ ID AND condition
+Rule 47    condition -> ID MENORQ ASPASIMP ID ASPASIMP AND condition
+Rule 48    condition -> ID MENORQ ID OR condition
+Rule 49    condition -> ID MENORQ ASPASIMP ID ASPASIMP OR condition
+Rule 50    condition -> ID MAIORIG ID AND condition
+Rule 51    condition -> ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+Rule 52    condition -> ID MAIORIG ID OR condition
+Rule 53    condition -> ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+Rule 54    condition -> ID MENORIG ID AND condition
+Rule 55    condition -> ID MENORIG ASPASIMP ID ASPASIMP AND condition
+Rule 56    condition -> ID MENORIG ID OR condition
+Rule 57    condition -> ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+Terminals, with rules where they appear
+
+AND                  : 26 27 30 31 34 35 38 39 42 43 46 47 50 51 54 55
+APAR                 : 
+ASPASIMP             : 11 11 13 13 15 15 17 17 19 19 21 21 23 23 25 25 27 27 29 29 31 31 33 33 35 35 37 37 39 39 41 41 43 43 45 45 47 47 49 49 51 51 53 53 55 55 57 57
+ATRIB                : 10 11 30 31 32 33
+CTE                  : 
+DELETE               : 4
+DPONTOS              : 
+EQ                   : 20 21 34 35 36 37
+FPAR                 : 
+FROM                 : 9
+ID                   : 7 8 9 10 10 11 11 12 12 13 13 14 14 15 15 16 16 17 17 18 18 19 19 20 20 21 21 22 22 23 23 24 24 25 25 26 26 27 27 28 28 29 29 30 30 31 31 32 32 33 33 34 34 35 35 36 36 37 37 38 38 39 39 40 40 41 41 42 42 43 43 44 44 45 45 46 46 47 47 48 48 49 49 50 50 51 51 52 52 53 53 54 54 55 55 56 56 57 57
+LIKE                 : 28 29
+MAIORIG              : 18 19 50 51 52 53
+MAIORQ               : 14 15 42 43 44 45
+MENORIG              : 16 17 54 55 56 57
+MENORQ               : 12 13 46 47 48 49
+NE                   : 22 23 38 39 40 41
+OPADI                : 
+OPDIV                : 
+OPMULT               : 5
+OPSUB                : 
+OR                   : 24 25 32 33 36 37 40 41 44 45 48 49 52 53 56 57
+PONTO                : 
+PVIRG                : 
+SELECT               : 2
+UPDATE               : 3
+VIRG                 : 8
+WHERE                : 9
+error                : 
+
+Nonterminals, with rules where they appear
+
+condition            : 1 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57
+identifiers          : 6 8
+items                : 1
+main                 : 0
+select               : 1
+where                : 1
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . main
+    (1) main -> . select items where condition
+    (2) select -> . SELECT
+    (3) select -> . UPDATE
+    (4) select -> . DELETE
+
+    SELECT          shift and go to state 3
+    UPDATE          shift and go to state 4
+    DELETE          shift and go to state 5
+
+    main                           shift and go to state 1
+    select                         shift and go to state 2
+
+state 1
+
+    (0) S' -> main .
+
+
+
+state 2
+
+    (1) main -> select . items where condition
+    (5) items -> . OPMULT
+    (6) items -> . identifiers
+    (7) identifiers -> . ID
+    (8) identifiers -> . ID VIRG identifiers
+
+    OPMULT          shift and go to state 7
+    ID              shift and go to state 9
+
+    items                          shift and go to state 6
+    identifiers                    shift and go to state 8
+
+state 3
+
+    (2) select -> SELECT .
+
+    OPMULT          reduce using rule 2 (select -> SELECT .)
+    ID              reduce using rule 2 (select -> SELECT .)
+
+
+state 4
+
+    (3) select -> UPDATE .
+
+    OPMULT          reduce using rule 3 (select -> UPDATE .)
+    ID              reduce using rule 3 (select -> UPDATE .)
+
+
+state 5
+
+    (4) select -> DELETE .
+
+    OPMULT          reduce using rule 4 (select -> DELETE .)
+    ID              reduce using rule 4 (select -> DELETE .)
+
+
+state 6
+
+    (1) main -> select items . where condition
+    (9) where -> . FROM ID WHERE
+
+    FROM            shift and go to state 11
+
+    where                          shift and go to state 10
+
+state 7
+
+    (5) items -> OPMULT .
+
+    FROM            reduce using rule 5 (items -> OPMULT .)
+
+
+state 8
+
+    (6) items -> identifiers .
+
+    FROM            reduce using rule 6 (items -> identifiers .)
+
+
+state 9
+
+    (7) identifiers -> ID .
+    (8) identifiers -> ID . VIRG identifiers
+
+    FROM            reduce using rule 7 (identifiers -> ID .)
+    VIRG            shift and go to state 12
+
+
+state 10
+
+    (1) main -> select items where . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 13
+
+state 11
+
+    (9) where -> FROM . ID WHERE
+
+    ID              shift and go to state 15
+
+
+state 12
+
+    (8) identifiers -> ID VIRG . identifiers
+    (7) identifiers -> . ID
+    (8) identifiers -> . ID VIRG identifiers
+
+    ID              shift and go to state 9
+
+    identifiers                    shift and go to state 16
+
+state 13
+
+    (1) main -> select items where condition .
+
+    $end            reduce using rule 1 (main -> select items where condition .)
+
+
+state 14
+
+    (10) condition -> ID . ATRIB ID
+    (11) condition -> ID . ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> ID . MENORQ ID
+    (13) condition -> ID . MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> ID . MAIORQ ID
+    (15) condition -> ID . MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> ID . MENORIG ID
+    (17) condition -> ID . MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> ID . MAIORIG ID
+    (19) condition -> ID . MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> ID . EQ ID
+    (21) condition -> ID . EQ ASPASIMP ID ASPASIMP
+    (22) condition -> ID . NE ID
+    (23) condition -> ID . NE ASPASIMP ID ASPASIMP
+    (24) condition -> ID . OR ID
+    (25) condition -> ID . OR ASPASIMP ID ASPASIMP
+    (26) condition -> ID . AND ID
+    (27) condition -> ID . AND ASPASIMP ID ASPASIMP
+    (28) condition -> ID . LIKE ID
+    (29) condition -> ID . LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> ID . ATRIB ID AND condition
+    (31) condition -> ID . ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> ID . ATRIB ID OR condition
+    (33) condition -> ID . ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> ID . EQ ID AND condition
+    (35) condition -> ID . EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> ID . EQ ID OR condition
+    (37) condition -> ID . EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> ID . NE ID AND condition
+    (39) condition -> ID . NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> ID . NE ID OR condition
+    (41) condition -> ID . NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> ID . MAIORQ ID AND condition
+    (43) condition -> ID . MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> ID . MAIORQ ID OR condition
+    (45) condition -> ID . MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> ID . MENORQ ID AND condition
+    (47) condition -> ID . MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> ID . MENORQ ID OR condition
+    (49) condition -> ID . MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> ID . MAIORIG ID AND condition
+    (51) condition -> ID . MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> ID . MAIORIG ID OR condition
+    (53) condition -> ID . MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> ID . MENORIG ID AND condition
+    (55) condition -> ID . MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> ID . MENORIG ID OR condition
+    (57) condition -> ID . MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ATRIB           shift and go to state 17
+    MENORQ          shift and go to state 18
+    MAIORQ          shift and go to state 19
+    MENORIG         shift and go to state 20
+    MAIORIG         shift and go to state 21
+    EQ              shift and go to state 22
+    NE              shift and go to state 23
+    OR              shift and go to state 24
+    AND             shift and go to state 25
+    LIKE            shift and go to state 26
+
+
+state 15
+
+    (9) where -> FROM ID . WHERE
+
+    WHERE           shift and go to state 27
+
+
+state 16
+
+    (8) identifiers -> ID VIRG identifiers .
+
+    FROM            reduce using rule 8 (identifiers -> ID VIRG identifiers .)
+
+
+state 17
+
+    (10) condition -> ID ATRIB . ID
+    (11) condition -> ID ATRIB . ASPASIMP ID ASPASIMP
+    (30) condition -> ID ATRIB . ID AND condition
+    (31) condition -> ID ATRIB . ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> ID ATRIB . ID OR condition
+    (33) condition -> ID ATRIB . ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 28
+    ASPASIMP        shift and go to state 29
+
+
+state 18
+
+    (12) condition -> ID MENORQ . ID
+    (13) condition -> ID MENORQ . ASPASIMP ID ASPASIMP
+    (46) condition -> ID MENORQ . ID AND condition
+    (47) condition -> ID MENORQ . ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> ID MENORQ . ID OR condition
+    (49) condition -> ID MENORQ . ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 30
+    ASPASIMP        shift and go to state 31
+
+
+state 19
+
+    (14) condition -> ID MAIORQ . ID
+    (15) condition -> ID MAIORQ . ASPASIMP ID ASPASIMP
+    (42) condition -> ID MAIORQ . ID AND condition
+    (43) condition -> ID MAIORQ . ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> ID MAIORQ . ID OR condition
+    (45) condition -> ID MAIORQ . ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 32
+    ASPASIMP        shift and go to state 33
+
+
+state 20
+
+    (16) condition -> ID MENORIG . ID
+    (17) condition -> ID MENORIG . ASPASIMP ID ASPASIMP
+    (54) condition -> ID MENORIG . ID AND condition
+    (55) condition -> ID MENORIG . ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> ID MENORIG . ID OR condition
+    (57) condition -> ID MENORIG . ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 34
+    ASPASIMP        shift and go to state 35
+
+
+state 21
+
+    (18) condition -> ID MAIORIG . ID
+    (19) condition -> ID MAIORIG . ASPASIMP ID ASPASIMP
+    (50) condition -> ID MAIORIG . ID AND condition
+    (51) condition -> ID MAIORIG . ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> ID MAIORIG . ID OR condition
+    (53) condition -> ID MAIORIG . ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 36
+    ASPASIMP        shift and go to state 37
+
+
+state 22
+
+    (20) condition -> ID EQ . ID
+    (21) condition -> ID EQ . ASPASIMP ID ASPASIMP
+    (34) condition -> ID EQ . ID AND condition
+    (35) condition -> ID EQ . ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> ID EQ . ID OR condition
+    (37) condition -> ID EQ . ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 38
+    ASPASIMP        shift and go to state 39
+
+
+state 23
+
+    (22) condition -> ID NE . ID
+    (23) condition -> ID NE . ASPASIMP ID ASPASIMP
+    (38) condition -> ID NE . ID AND condition
+    (39) condition -> ID NE . ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> ID NE . ID OR condition
+    (41) condition -> ID NE . ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 40
+    ASPASIMP        shift and go to state 41
+
+
+state 24
+
+    (24) condition -> ID OR . ID
+    (25) condition -> ID OR . ASPASIMP ID ASPASIMP
+
+    ID              shift and go to state 42
+    ASPASIMP        shift and go to state 43
+
+
+state 25
+
+    (26) condition -> ID AND . ID
+    (27) condition -> ID AND . ASPASIMP ID ASPASIMP
+
+    ID              shift and go to state 44
+    ASPASIMP        shift and go to state 45
+
+
+state 26
+
+    (28) condition -> ID LIKE . ID
+    (29) condition -> ID LIKE . ASPASIMP ID ASPASIMP
+
+    ID              shift and go to state 46
+    ASPASIMP        shift and go to state 47
+
+
+state 27
+
+    (9) where -> FROM ID WHERE .
+
+    ID              reduce using rule 9 (where -> FROM ID WHERE .)
+
+
+state 28
+
+    (10) condition -> ID ATRIB ID .
+    (30) condition -> ID ATRIB ID . AND condition
+    (32) condition -> ID ATRIB ID . OR condition
+
+    $end            reduce using rule 10 (condition -> ID ATRIB ID .)
+    AND             shift and go to state 48
+    OR              shift and go to state 49
+
+
+state 29
+
+    (11) condition -> ID ATRIB ASPASIMP . ID ASPASIMP
+    (31) condition -> ID ATRIB ASPASIMP . ID ASPASIMP AND condition
+    (33) condition -> ID ATRIB ASPASIMP . ID ASPASIMP OR condition
+
+    ID              shift and go to state 50
+
+
+state 30
+
+    (12) condition -> ID MENORQ ID .
+    (46) condition -> ID MENORQ ID . AND condition
+    (48) condition -> ID MENORQ ID . OR condition
+
+    $end            reduce using rule 12 (condition -> ID MENORQ ID .)
+    AND             shift and go to state 51
+    OR              shift and go to state 52
+
+
+state 31
+
+    (13) condition -> ID MENORQ ASPASIMP . ID ASPASIMP
+    (47) condition -> ID MENORQ ASPASIMP . ID ASPASIMP AND condition
+    (49) condition -> ID MENORQ ASPASIMP . ID ASPASIMP OR condition
+
+    ID              shift and go to state 53
+
+
+state 32
+
+    (14) condition -> ID MAIORQ ID .
+    (42) condition -> ID MAIORQ ID . AND condition
+    (44) condition -> ID MAIORQ ID . OR condition
+
+    $end            reduce using rule 14 (condition -> ID MAIORQ ID .)
+    AND             shift and go to state 54
+    OR              shift and go to state 55
+
+
+state 33
+
+    (15) condition -> ID MAIORQ ASPASIMP . ID ASPASIMP
+    (43) condition -> ID MAIORQ ASPASIMP . ID ASPASIMP AND condition
+    (45) condition -> ID MAIORQ ASPASIMP . ID ASPASIMP OR condition
+
+    ID              shift and go to state 56
+
+
+state 34
+
+    (16) condition -> ID MENORIG ID .
+    (54) condition -> ID MENORIG ID . AND condition
+    (56) condition -> ID MENORIG ID . OR condition
+
+    $end            reduce using rule 16 (condition -> ID MENORIG ID .)
+    AND             shift and go to state 57
+    OR              shift and go to state 58
+
+
+state 35
+
+    (17) condition -> ID MENORIG ASPASIMP . ID ASPASIMP
+    (55) condition -> ID MENORIG ASPASIMP . ID ASPASIMP AND condition
+    (57) condition -> ID MENORIG ASPASIMP . ID ASPASIMP OR condition
+
+    ID              shift and go to state 59
+
+
+state 36
+
+    (18) condition -> ID MAIORIG ID .
+    (50) condition -> ID MAIORIG ID . AND condition
+    (52) condition -> ID MAIORIG ID . OR condition
+
+    $end            reduce using rule 18 (condition -> ID MAIORIG ID .)
+    AND             shift and go to state 60
+    OR              shift and go to state 61
+
+
+state 37
+
+    (19) condition -> ID MAIORIG ASPASIMP . ID ASPASIMP
+    (51) condition -> ID MAIORIG ASPASIMP . ID ASPASIMP AND condition
+    (53) condition -> ID MAIORIG ASPASIMP . ID ASPASIMP OR condition
+
+    ID              shift and go to state 62
+
+
+state 38
+
+    (20) condition -> ID EQ ID .
+    (34) condition -> ID EQ ID . AND condition
+    (36) condition -> ID EQ ID . OR condition
+
+    $end            reduce using rule 20 (condition -> ID EQ ID .)
+    AND             shift and go to state 63
+    OR              shift and go to state 64
+
+
+state 39
+
+    (21) condition -> ID EQ ASPASIMP . ID ASPASIMP
+    (35) condition -> ID EQ ASPASIMP . ID ASPASIMP AND condition
+    (37) condition -> ID EQ ASPASIMP . ID ASPASIMP OR condition
+
+    ID              shift and go to state 65
+
+
+state 40
+
+    (22) condition -> ID NE ID .
+    (38) condition -> ID NE ID . AND condition
+    (40) condition -> ID NE ID . OR condition
+
+    $end            reduce using rule 22 (condition -> ID NE ID .)
+    AND             shift and go to state 66
+    OR              shift and go to state 67
+
+
+state 41
+
+    (23) condition -> ID NE ASPASIMP . ID ASPASIMP
+    (39) condition -> ID NE ASPASIMP . ID ASPASIMP AND condition
+    (41) condition -> ID NE ASPASIMP . ID ASPASIMP OR condition
+
+    ID              shift and go to state 68
+
+
+state 42
+
+    (24) condition -> ID OR ID .
+
+    $end            reduce using rule 24 (condition -> ID OR ID .)
+
+
+state 43
+
+    (25) condition -> ID OR ASPASIMP . ID ASPASIMP
+
+    ID              shift and go to state 69
+
+
+state 44
+
+    (26) condition -> ID AND ID .
+
+    $end            reduce using rule 26 (condition -> ID AND ID .)
+
+
+state 45
+
+    (27) condition -> ID AND ASPASIMP . ID ASPASIMP
+
+    ID              shift and go to state 70
+
+
+state 46
+
+    (28) condition -> ID LIKE ID .
+
+    $end            reduce using rule 28 (condition -> ID LIKE ID .)
+
+
+state 47
+
+    (29) condition -> ID LIKE ASPASIMP . ID ASPASIMP
+
+    ID              shift and go to state 71
+
+
+state 48
+
+    (30) condition -> ID ATRIB ID AND . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 72
+
+state 49
+
+    (32) condition -> ID ATRIB ID OR . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 73
+
+state 50
+
+    (11) condition -> ID ATRIB ASPASIMP ID . ASPASIMP
+    (31) condition -> ID ATRIB ASPASIMP ID . ASPASIMP AND condition
+    (33) condition -> ID ATRIB ASPASIMP ID . ASPASIMP OR condition
+
+    ASPASIMP        shift and go to state 74
+
+
+state 51
+
+    (46) condition -> ID MENORQ ID AND . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 75
+
+state 52
+
+    (48) condition -> ID MENORQ ID OR . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 76
+
+state 53
+
+    (13) condition -> ID MENORQ ASPASIMP ID . ASPASIMP
+    (47) condition -> ID MENORQ ASPASIMP ID . ASPASIMP AND condition
+    (49) condition -> ID MENORQ ASPASIMP ID . ASPASIMP OR condition
+
+    ASPASIMP        shift and go to state 77
+
+
+state 54
+
+    (42) condition -> ID MAIORQ ID AND . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 78
+
+state 55
+
+    (44) condition -> ID MAIORQ ID OR . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 79
+
+state 56
+
+    (15) condition -> ID MAIORQ ASPASIMP ID . ASPASIMP
+    (43) condition -> ID MAIORQ ASPASIMP ID . ASPASIMP AND condition
+    (45) condition -> ID MAIORQ ASPASIMP ID . ASPASIMP OR condition
+
+    ASPASIMP        shift and go to state 80
+
+
+state 57
+
+    (54) condition -> ID MENORIG ID AND . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 81
+
+state 58
+
+    (56) condition -> ID MENORIG ID OR . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 82
+
+state 59
+
+    (17) condition -> ID MENORIG ASPASIMP ID . ASPASIMP
+    (55) condition -> ID MENORIG ASPASIMP ID . ASPASIMP AND condition
+    (57) condition -> ID MENORIG ASPASIMP ID . ASPASIMP OR condition
+
+    ASPASIMP        shift and go to state 83
+
+
+state 60
+
+    (50) condition -> ID MAIORIG ID AND . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 84
+
+state 61
+
+    (52) condition -> ID MAIORIG ID OR . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 85
+
+state 62
+
+    (19) condition -> ID MAIORIG ASPASIMP ID . ASPASIMP
+    (51) condition -> ID MAIORIG ASPASIMP ID . ASPASIMP AND condition
+    (53) condition -> ID MAIORIG ASPASIMP ID . ASPASIMP OR condition
+
+    ASPASIMP        shift and go to state 86
+
+
+state 63
+
+    (34) condition -> ID EQ ID AND . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 87
+
+state 64
+
+    (36) condition -> ID EQ ID OR . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 88
+
+state 65
+
+    (21) condition -> ID EQ ASPASIMP ID . ASPASIMP
+    (35) condition -> ID EQ ASPASIMP ID . ASPASIMP AND condition
+    (37) condition -> ID EQ ASPASIMP ID . ASPASIMP OR condition
+
+    ASPASIMP        shift and go to state 89
+
+
+state 66
+
+    (38) condition -> ID NE ID AND . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 90
+
+state 67
+
+    (40) condition -> ID NE ID OR . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 91
+
+state 68
+
+    (23) condition -> ID NE ASPASIMP ID . ASPASIMP
+    (39) condition -> ID NE ASPASIMP ID . ASPASIMP AND condition
+    (41) condition -> ID NE ASPASIMP ID . ASPASIMP OR condition
+
+    ASPASIMP        shift and go to state 92
+
+
+state 69
+
+    (25) condition -> ID OR ASPASIMP ID . ASPASIMP
+
+    ASPASIMP        shift and go to state 93
+
+
+state 70
+
+    (27) condition -> ID AND ASPASIMP ID . ASPASIMP
+
+    ASPASIMP        shift and go to state 94
+
+
+state 71
+
+    (29) condition -> ID LIKE ASPASIMP ID . ASPASIMP
+
+    ASPASIMP        shift and go to state 95
+
+
+state 72
+
+    (30) condition -> ID ATRIB ID AND condition .
+
+    $end            reduce using rule 30 (condition -> ID ATRIB ID AND condition .)
+
+
+state 73
+
+    (32) condition -> ID ATRIB ID OR condition .
+
+    $end            reduce using rule 32 (condition -> ID ATRIB ID OR condition .)
+
+
+state 74
+
+    (11) condition -> ID ATRIB ASPASIMP ID ASPASIMP .
+    (31) condition -> ID ATRIB ASPASIMP ID ASPASIMP . AND condition
+    (33) condition -> ID ATRIB ASPASIMP ID ASPASIMP . OR condition
+
+    $end            reduce using rule 11 (condition -> ID ATRIB ASPASIMP ID ASPASIMP .)
+    AND             shift and go to state 96
+    OR              shift and go to state 97
+
+
+state 75
+
+    (46) condition -> ID MENORQ ID AND condition .
+
+    $end            reduce using rule 46 (condition -> ID MENORQ ID AND condition .)
+
+
+state 76
+
+    (48) condition -> ID MENORQ ID OR condition .
+
+    $end            reduce using rule 48 (condition -> ID MENORQ ID OR condition .)
+
+
+state 77
+
+    (13) condition -> ID MENORQ ASPASIMP ID ASPASIMP .
+    (47) condition -> ID MENORQ ASPASIMP ID ASPASIMP . AND condition
+    (49) condition -> ID MENORQ ASPASIMP ID ASPASIMP . OR condition
+
+    $end            reduce using rule 13 (condition -> ID MENORQ ASPASIMP ID ASPASIMP .)
+    AND             shift and go to state 98
+    OR              shift and go to state 99
+
+
+state 78
+
+    (42) condition -> ID MAIORQ ID AND condition .
+
+    $end            reduce using rule 42 (condition -> ID MAIORQ ID AND condition .)
+
+
+state 79
+
+    (44) condition -> ID MAIORQ ID OR condition .
+
+    $end            reduce using rule 44 (condition -> ID MAIORQ ID OR condition .)
+
+
+state 80
+
+    (15) condition -> ID MAIORQ ASPASIMP ID ASPASIMP .
+    (43) condition -> ID MAIORQ ASPASIMP ID ASPASIMP . AND condition
+    (45) condition -> ID MAIORQ ASPASIMP ID ASPASIMP . OR condition
+
+    $end            reduce using rule 15 (condition -> ID MAIORQ ASPASIMP ID ASPASIMP .)
+    AND             shift and go to state 100
+    OR              shift and go to state 101
+
+
+state 81
+
+    (54) condition -> ID MENORIG ID AND condition .
+
+    $end            reduce using rule 54 (condition -> ID MENORIG ID AND condition .)
+
+
+state 82
+
+    (56) condition -> ID MENORIG ID OR condition .
+
+    $end            reduce using rule 56 (condition -> ID MENORIG ID OR condition .)
+
+
+state 83
+
+    (17) condition -> ID MENORIG ASPASIMP ID ASPASIMP .
+    (55) condition -> ID MENORIG ASPASIMP ID ASPASIMP . AND condition
+    (57) condition -> ID MENORIG ASPASIMP ID ASPASIMP . OR condition
+
+    $end            reduce using rule 17 (condition -> ID MENORIG ASPASIMP ID ASPASIMP .)
+    AND             shift and go to state 102
+    OR              shift and go to state 103
+
+
+state 84
+
+    (50) condition -> ID MAIORIG ID AND condition .
+
+    $end            reduce using rule 50 (condition -> ID MAIORIG ID AND condition .)
+
+
+state 85
+
+    (52) condition -> ID MAIORIG ID OR condition .
+
+    $end            reduce using rule 52 (condition -> ID MAIORIG ID OR condition .)
+
+
+state 86
+
+    (19) condition -> ID MAIORIG ASPASIMP ID ASPASIMP .
+    (51) condition -> ID MAIORIG ASPASIMP ID ASPASIMP . AND condition
+    (53) condition -> ID MAIORIG ASPASIMP ID ASPASIMP . OR condition
+
+    $end            reduce using rule 19 (condition -> ID MAIORIG ASPASIMP ID ASPASIMP .)
+    AND             shift and go to state 104
+    OR              shift and go to state 105
+
+
+state 87
+
+    (34) condition -> ID EQ ID AND condition .
+
+    $end            reduce using rule 34 (condition -> ID EQ ID AND condition .)
+
+
+state 88
+
+    (36) condition -> ID EQ ID OR condition .
+
+    $end            reduce using rule 36 (condition -> ID EQ ID OR condition .)
+
+
+state 89
+
+    (21) condition -> ID EQ ASPASIMP ID ASPASIMP .
+    (35) condition -> ID EQ ASPASIMP ID ASPASIMP . AND condition
+    (37) condition -> ID EQ ASPASIMP ID ASPASIMP . OR condition
+
+    $end            reduce using rule 21 (condition -> ID EQ ASPASIMP ID ASPASIMP .)
+    AND             shift and go to state 106
+    OR              shift and go to state 107
+
+
+state 90
+
+    (38) condition -> ID NE ID AND condition .
+
+    $end            reduce using rule 38 (condition -> ID NE ID AND condition .)
+
+
+state 91
+
+    (40) condition -> ID NE ID OR condition .
+
+    $end            reduce using rule 40 (condition -> ID NE ID OR condition .)
+
+
+state 92
+
+    (23) condition -> ID NE ASPASIMP ID ASPASIMP .
+    (39) condition -> ID NE ASPASIMP ID ASPASIMP . AND condition
+    (41) condition -> ID NE ASPASIMP ID ASPASIMP . OR condition
+
+    $end            reduce using rule 23 (condition -> ID NE ASPASIMP ID ASPASIMP .)
+    AND             shift and go to state 108
+    OR              shift and go to state 109
+
+
+state 93
+
+    (25) condition -> ID OR ASPASIMP ID ASPASIMP .
+
+    $end            reduce using rule 25 (condition -> ID OR ASPASIMP ID ASPASIMP .)
+
+
+state 94
+
+    (27) condition -> ID AND ASPASIMP ID ASPASIMP .
+
+    $end            reduce using rule 27 (condition -> ID AND ASPASIMP ID ASPASIMP .)
+
+
+state 95
+
+    (29) condition -> ID LIKE ASPASIMP ID ASPASIMP .
+
+    $end            reduce using rule 29 (condition -> ID LIKE ASPASIMP ID ASPASIMP .)
+
+
+state 96
+
+    (31) condition -> ID ATRIB ASPASIMP ID ASPASIMP AND . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 110
+
+state 97
+
+    (33) condition -> ID ATRIB ASPASIMP ID ASPASIMP OR . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 111
+
+state 98
+
+    (47) condition -> ID MENORQ ASPASIMP ID ASPASIMP AND . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 112
+
+state 99
+
+    (49) condition -> ID MENORQ ASPASIMP ID ASPASIMP OR . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 113
+
+state 100
+
+    (43) condition -> ID MAIORQ ASPASIMP ID ASPASIMP AND . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 114
+
+state 101
+
+    (45) condition -> ID MAIORQ ASPASIMP ID ASPASIMP OR . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 115
+
+state 102
+
+    (55) condition -> ID MENORIG ASPASIMP ID ASPASIMP AND . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 116
+
+state 103
+
+    (57) condition -> ID MENORIG ASPASIMP ID ASPASIMP OR . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 117
+
+state 104
+
+    (51) condition -> ID MAIORIG ASPASIMP ID ASPASIMP AND . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 118
+
+state 105
+
+    (53) condition -> ID MAIORIG ASPASIMP ID ASPASIMP OR . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 119
+
+state 106
+
+    (35) condition -> ID EQ ASPASIMP ID ASPASIMP AND . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 120
+
+state 107
+
+    (37) condition -> ID EQ ASPASIMP ID ASPASIMP OR . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 121
+
+state 108
+
+    (39) condition -> ID NE ASPASIMP ID ASPASIMP AND . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 122
+
+state 109
+
+    (41) condition -> ID NE ASPASIMP ID ASPASIMP OR . condition
+    (10) condition -> . ID ATRIB ID
+    (11) condition -> . ID ATRIB ASPASIMP ID ASPASIMP
+    (12) condition -> . ID MENORQ ID
+    (13) condition -> . ID MENORQ ASPASIMP ID ASPASIMP
+    (14) condition -> . ID MAIORQ ID
+    (15) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP
+    (16) condition -> . ID MENORIG ID
+    (17) condition -> . ID MENORIG ASPASIMP ID ASPASIMP
+    (18) condition -> . ID MAIORIG ID
+    (19) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP
+    (20) condition -> . ID EQ ID
+    (21) condition -> . ID EQ ASPASIMP ID ASPASIMP
+    (22) condition -> . ID NE ID
+    (23) condition -> . ID NE ASPASIMP ID ASPASIMP
+    (24) condition -> . ID OR ID
+    (25) condition -> . ID OR ASPASIMP ID ASPASIMP
+    (26) condition -> . ID AND ID
+    (27) condition -> . ID AND ASPASIMP ID ASPASIMP
+    (28) condition -> . ID LIKE ID
+    (29) condition -> . ID LIKE ASPASIMP ID ASPASIMP
+    (30) condition -> . ID ATRIB ID AND condition
+    (31) condition -> . ID ATRIB ASPASIMP ID ASPASIMP AND condition
+    (32) condition -> . ID ATRIB ID OR condition
+    (33) condition -> . ID ATRIB ASPASIMP ID ASPASIMP OR condition
+    (34) condition -> . ID EQ ID AND condition
+    (35) condition -> . ID EQ ASPASIMP ID ASPASIMP AND condition
+    (36) condition -> . ID EQ ID OR condition
+    (37) condition -> . ID EQ ASPASIMP ID ASPASIMP OR condition
+    (38) condition -> . ID NE ID AND condition
+    (39) condition -> . ID NE ASPASIMP ID ASPASIMP AND condition
+    (40) condition -> . ID NE ID OR condition
+    (41) condition -> . ID NE ASPASIMP ID ASPASIMP OR condition
+    (42) condition -> . ID MAIORQ ID AND condition
+    (43) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP AND condition
+    (44) condition -> . ID MAIORQ ID OR condition
+    (45) condition -> . ID MAIORQ ASPASIMP ID ASPASIMP OR condition
+    (46) condition -> . ID MENORQ ID AND condition
+    (47) condition -> . ID MENORQ ASPASIMP ID ASPASIMP AND condition
+    (48) condition -> . ID MENORQ ID OR condition
+    (49) condition -> . ID MENORQ ASPASIMP ID ASPASIMP OR condition
+    (50) condition -> . ID MAIORIG ID AND condition
+    (51) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP AND condition
+    (52) condition -> . ID MAIORIG ID OR condition
+    (53) condition -> . ID MAIORIG ASPASIMP ID ASPASIMP OR condition
+    (54) condition -> . ID MENORIG ID AND condition
+    (55) condition -> . ID MENORIG ASPASIMP ID ASPASIMP AND condition
+    (56) condition -> . ID MENORIG ID OR condition
+    (57) condition -> . ID MENORIG ASPASIMP ID ASPASIMP OR condition
+
+    ID              shift and go to state 14
+
+    condition                      shift and go to state 123
+
+state 110
+
+    (31) condition -> ID ATRIB ASPASIMP ID ASPASIMP AND condition .
+
+    $end            reduce using rule 31 (condition -> ID ATRIB ASPASIMP ID ASPASIMP AND condition .)
+
+
+state 111
+
+    (33) condition -> ID ATRIB ASPASIMP ID ASPASIMP OR condition .
+
+    $end            reduce using rule 33 (condition -> ID ATRIB ASPASIMP ID ASPASIMP OR condition .)
+
+
+state 112
+
+    (47) condition -> ID MENORQ ASPASIMP ID ASPASIMP AND condition .
+
+    $end            reduce using rule 47 (condition -> ID MENORQ ASPASIMP ID ASPASIMP AND condition .)
+
+
+state 113
+
+    (49) condition -> ID MENORQ ASPASIMP ID ASPASIMP OR condition .
+
+    $end            reduce using rule 49 (condition -> ID MENORQ ASPASIMP ID ASPASIMP OR condition .)
+
+
+state 114
+
+    (43) condition -> ID MAIORQ ASPASIMP ID ASPASIMP AND condition .
+
+    $end            reduce using rule 43 (condition -> ID MAIORQ ASPASIMP ID ASPASIMP AND condition .)
+
+
+state 115
+
+    (45) condition -> ID MAIORQ ASPASIMP ID ASPASIMP OR condition .
+
+    $end            reduce using rule 45 (condition -> ID MAIORQ ASPASIMP ID ASPASIMP OR condition .)
+
+
+state 116
+
+    (55) condition -> ID MENORIG ASPASIMP ID ASPASIMP AND condition .
+
+    $end            reduce using rule 55 (condition -> ID MENORIG ASPASIMP ID ASPASIMP AND condition .)
+
+
+state 117
+
+    (57) condition -> ID MENORIG ASPASIMP ID ASPASIMP OR condition .
+
+    $end            reduce using rule 57 (condition -> ID MENORIG ASPASIMP ID ASPASIMP OR condition .)
+
+
+state 118
+
+    (51) condition -> ID MAIORIG ASPASIMP ID ASPASIMP AND condition .
+
+    $end            reduce using rule 51 (condition -> ID MAIORIG ASPASIMP ID ASPASIMP AND condition .)
+
+
+state 119
+
+    (53) condition -> ID MAIORIG ASPASIMP ID ASPASIMP OR condition .
+
+    $end            reduce using rule 53 (condition -> ID MAIORIG ASPASIMP ID ASPASIMP OR condition .)
+
+
+state 120
+
+    (35) condition -> ID EQ ASPASIMP ID ASPASIMP AND condition .
+
+    $end            reduce using rule 35 (condition -> ID EQ ASPASIMP ID ASPASIMP AND condition .)
+
+
+state 121
+
+    (37) condition -> ID EQ ASPASIMP ID ASPASIMP OR condition .
+
+    $end            reduce using rule 37 (condition -> ID EQ ASPASIMP ID ASPASIMP OR condition .)
+
+
+state 122
+
+    (39) condition -> ID NE ASPASIMP ID ASPASIMP AND condition .
+
+    $end            reduce using rule 39 (condition -> ID NE ASPASIMP ID ASPASIMP AND condition .)
+
+
+state 123
+
+    (41) condition -> ID NE ASPASIMP ID ASPASIMP OR condition .
+
+    $end            reduce using rule 41 (condition -> ID NE ASPASIMP ID ASPASIMP OR condition .)
+
