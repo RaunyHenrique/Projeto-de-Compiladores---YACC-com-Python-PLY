@@ -6,3 +6,5 @@
   * Também, pode abrir o projeto em sua IDE de preferencia (sugiro PyCharm) e compilar o arquivo gramatica.py.
   
   
+* Querys válidas:
+
