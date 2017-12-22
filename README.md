@@ -8,3 +8,14 @@
   
 * Querys válidas:
 
+![alt text](https://github.com/RaunyHenrique/Projeto-de-Compiladores---YACC-com-Python-PLY/blob/master/imagens/01.png)
+
+![alt text](https://github.com/RaunyHenrique/Projeto-de-Compiladores---YACC-com-Python-PLY/blob/master/imagens/02.png)
+
+![alt text](https://github.com/RaunyHenrique/Projeto-de-Compiladores---YACC-com-Python-PLY/blob/master/imagens/03.png)
+
+* Querys inválidas:
+
+![alt text](https://github.com/RaunyHenrique/Projeto-de-Compiladores---YACC-com-Python-PLY/blob/master/imagens/04.png)
+
+![alt text](https://github.com/RaunyHenrique/Projeto-de-Compiladores---YACC-com-Python-PLY/blob/master/imagens/05.png)
